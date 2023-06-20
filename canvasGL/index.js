@@ -1,7 +1,29 @@
-import { Context2d, CanvasRenderingContext2D, CanvasGradient, CanvasPattern, Image, ImageData, PNGStream, PDFStream, JPEGStream, DOMMatrix, DOMPoint, registerFont, parseFont, createImageData, loadImage, backends, version, cairoVersion, jpegVersion, gifVersion, freetypeVersion } from 'canvas';
+const {
+  Context2d,
+  CanvasRenderingContext2D,
+  CanvasGradient,
+  CanvasPattern,
+  Image,
+  ImageData,
+  PNGStream,
+  PDFStream,
+  JPEGStream,
+  DOMMatrix,
+  DOMPoint,
+  registerFont,
+  parseFont,
+  createImageData,
+  loadImage,
+  backends,
+  version,
+  cairoVersion,
+  jpegVersion,
+  gifVersion,
+  freetypeVersion,
+} = require('canvas');
 
-import { WebGLRenderingContext } from 'gl/src/javascript/webgl-rendering-context';
-import Canvas from './canvas';
+const { WebGLRenderingContext } = require('gl');
+const Canvas = require('./canvas');
 
 const _drawImage = CanvasRenderingContext2D.prototype.drawImage;
 CanvasRenderingContext2D.prototype.drawImage = function (img, ...args) {
@@ -14,7 +36,7 @@ function createCanvas(width, height, type) {
   return new Canvas(width, height, type);
 }
 
-export default {
+module.exports = {
   Canvas,
   Context2d,
   CanvasRenderingContext2D,
