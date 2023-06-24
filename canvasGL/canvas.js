@@ -1,6 +1,6 @@
-const {Canvas, Image} = require('canvas');
-const EventEmitter = require('events');
-const createGLContext = require('gl');
+import { Canvas, Image } from 'canvas';
+import EventEmitter from 'events';
+import createGLContext from 'gl';
 
 const _ctx = Symbol('ctx');
 
@@ -188,4 +188,4 @@ class NodeCanvasElement extends Canvas {
   }
 }
 
-module.exports = NodeCanvasElement;
+export default NodeCanvasElement;
